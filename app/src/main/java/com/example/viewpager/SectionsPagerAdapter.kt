@@ -12,6 +12,12 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager, li
         return 3
     }
     override fun createFragment(position: Int): Fragment {
-        return PlaceholderFragment.newInstance(position + 1)
+        return when(position){
+            0->{Home()}
+            1->{Gallery()}
+            2->{Slideshow()}
+            else->{Home()}
+        }
+
     }
 }
